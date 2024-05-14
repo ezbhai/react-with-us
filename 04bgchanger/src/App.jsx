@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useState,useEffect} from "react"
 
 
 function App() {
   const [color, setColor] = useState("olive")
+  useEffect(() => {
+    document.body.style.backgroundColor = color
+  }, [color])
+
 
   return (
     <div className="w-full h-screen duration-200"
-    style={{backgroundColor: color}}
     >
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
         <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
